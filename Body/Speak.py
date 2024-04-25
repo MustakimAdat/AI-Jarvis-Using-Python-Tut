@@ -20,95 +20,95 @@ def Speak(Text):
     engine.say(Text)
     engine.runAndWait()
 
-# Chrome Base
-# Advantages = More Voices, More Clear , Overspeaking.
-# Disadvantages = Word Limit, Slow.
+Chrome Base
+Advantages = More Voices, More Clear , Overspeaking.
+Disadvantages = Word Limit, Slow.
 
-                                        #Chrome Based starts from here   
-# ------------------------------------------------------------------------------------------------------------->
+                                        Chrome Based starts from here   
+------------------------------------------------------------------------------------------------------------->
 
-# from selenium import webdriver
-# from selenium.webdriver.support.ui import Select
-# from selenium.webdriver.chrome.options import Options
-# from selenium.webdriver.common.by import By
-# from time import sleep
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from time import sleep
 
-# chrome_options = Options()
-# chrome_options.add_argument('--log-level=3')
-# chrome_options.headless = True
-# Path = "DataBase\\chromedriver.exe"
-# driver = webdriver.Chrome(Path,options=chrome_options)
-# driver.maximize_window()
+chrome_options = Options()
+chrome_options.add_argument('--log-level=3')
+chrome_options.headless = True
+Path = "DataBase\\chromedriver.exe"
+driver = webdriver.Chrome(Path,options=chrome_options)
+driver.maximize_window()
 
-# website = r"https://ttsmp3.com/text-to-speech/British%20English/"
-# driver.get(website)
-# ButtonSelection = Select(driver.find_element(by=By.XPATH,value='/html/body/div[4]/div[2]/form/select'))
-# ButtonSelection.select_by_visible_text('British English / Brian')
+website = r"https://ttsmp3.com/text-to-speech/British%20English/"
+driver.get(website)
+ButtonSelection = Select(driver.find_element(by=By.XPATH,value='/html/body/div[4]/div[2]/form/select'))
+ButtonSelection.select_by_visible_text('British English / Brian')
 
-# def Speak(Text):
+def Speak(Text):
 
-#     lengthoftext = len(str(Text))
+    lengthoftext = len(str(Text))
 
-#     if lengthoftext==0:
-#         pass
+    if lengthoftext==0:
+        pass
 
-#     else:
-#         print("")
-#         print(f"AI : {Text}.")
-#         print("")
-#         Data = str(Text)
-#         xpathofsec = '/html/body/div[4]/div[2]/form/textarea'
-#         driver.find_element(By.XPATH,value=xpathofsec).send_keys(Data)
-#         driver.find_element(By.XPATH,value='//*[@id="vorlesenbutton"]').click()
-#         driver.find_element(By.XPATH,value="/html/body/div[4]/div[2]/form/textarea").clear()
+    else:
+        print("")
+        print(f"AI : {Text}.")
+        print("")
+        Data = str(Text)
+        xpathofsec = '/html/body/div[4]/div[2]/form/textarea'
+        driver.find_element(By.XPATH,value=xpathofsec).send_keys(Data)
+        driver.find_element(By.XPATH,value='//*[@id="vorlesenbutton"]').click()
+        driver.find_element(By.XPATH,value="/html/body/div[4]/div[2]/form/textarea").clear()
 
-#         if lengthoftext>=30:
-#             sleep(4)
+        if lengthoftext>=30:
+            sleep(4)
 
-#         elif lengthoftext>=40:
-#             sleep(6)
+        elif lengthoftext>=40:
+            sleep(6)
 
-#         elif lengthoftext>=55:
-#             sleep(8)
+        elif lengthoftext>=55:
+            sleep(8)
 
-#         elif lengthoftext>=70:
-#             sleep(10)
+        elif lengthoftext>=70:
+            sleep(10)
 
-#         elif lengthoftext>=100:
-#             sleep(13)
+        elif lengthoftext>=100:
+            sleep(13)
 
-#         elif lengthoftext>=120:
-#             sleep(14)
+        elif lengthoftext>=120:
+            sleep(14)
 
-#         else:
-#             sleep(2)
+        else:
+            sleep(2)
 
-                                    #Custom Voice Based starts from here   
-# ------------------------------------------------------------------------------------------------------------->
+                                    Custom Voice Based starts from here   
+------------------------------------------------------------------------------------------------------------->
 
 
-# import os
-# import pygame
+import os
+import pygame
 
-# voice2 = 'en-GB-SoniaNeural'
+voice2 = 'en-GB-SoniaNeural'
 
-# def Speak(Text):
-#     voice = 'en-US-SteffanNeural'
-#     command = f'edge-tts --voice "{voice}" --text "{Text}" --write-media "data.mp3"'
-#     os.system(command)
+def Speak(Text):
+    voice = 'en-US-SteffanNeural'
+    command = f'edge-tts --voice "{voice}" --text "{Text}" --write-media "data.mp3"'
+    os.system(command)
 
-#     pygame.init()
-#     pygame.mixer.init()
-#     pygame.mixer.music.load("data.mp3")
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load("data.mp3")
 
-#     try:
-#         pygame.mixer.music.play()
+    try:
+        pygame.mixer.music.play()
 
-#         while pygame.mixer.music.get_busy():
-#             pygame.time.Clock().tick(10)
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(10)
 
-#     except Exception as e:
-#         print(e)
-#     finally:
-#         pygame.mixer.music.stop()
-#         pygame.mixer.quit()
+    except Exception as e:
+        print(e)
+    finally:
+        pygame.mixer.music.stop()
+        pygame.mixer.quit()
